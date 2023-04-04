@@ -10,7 +10,7 @@ class awscli::params {
 
   case $::os['family'] {
     'Debian': {
-      $pkg_dev = 'python-dev'
+      $pkg_dev = 'python-dev-is-python3'
       $pkg_pip = 'python-pip'
     }
     'RedHat': {
