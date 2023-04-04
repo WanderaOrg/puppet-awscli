@@ -10,8 +10,16 @@ class awscli::params {
 
   case $::os['family'] {
     'Debian': {
-      $pkg_dev = 'python-dev'
-      $pkg_pip = 'python-pip'
+      case $::os['release']['major'] {
+        "22.04":{
+          $pkg_dev = 'python-dev-is-python3'
+          $pkg_pip = 'python-pip'
+        }
+        "18.04":{
+          $pkg_dev = 'python-dev'
+          $pkg_pip = 'python-pip'
+        }
+      }
     }
     'RedHat': {
       if $::os['name'] == 'Amazon' {
