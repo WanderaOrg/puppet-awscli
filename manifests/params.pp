@@ -13,7 +13,7 @@ class awscli::params {
       case $::os['release']['major'] {
         "22.04":{
           $pkg_dev = 'python-dev-is-python3'
-          $pkg_pip = 'python-pip'
+          $pkg_pip = 'python3-pip'
         }
         "18.04":{
           $pkg_dev = 'python-dev'
